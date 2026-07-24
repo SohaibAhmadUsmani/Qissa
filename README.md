@@ -1,5 +1,7 @@
 # Qissa Wear — E-Commerce Clothing Store
-![Uploading qissa.png…]()
+
+<img width="1352" height="635" alt="qissa" src="https://github.com/user-attachments/assets/bbb8aadc-082e-4666-a935-04f9c1f9f228" />
+
 
 A full-stack MERN e-commerce application for a Pakistani clothing brand.
 
