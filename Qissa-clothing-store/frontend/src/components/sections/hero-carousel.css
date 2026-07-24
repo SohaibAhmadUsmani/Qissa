@@ -1,0 +1,110 @@
+.hero-carousel {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-carousel-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.85) brightness(0.88);
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.hero-carousel-image-active {
+  opacity: 1;
+}
+
+/* ─── Arrows ─── */
+.hero-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(10, 8, 6, 0.35);
+  color: rgba(255, 255, 255, 0.8);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+  opacity: 0;
+}
+
+.hero-section:hover .hero-carousel-arrow {
+  opacity: 1;
+}
+
+.hero-carousel-arrow:hover {
+  background: rgba(10, 8, 6, 0.6);
+  color: #fff;
+}
+
+.hero-carousel-arrow-left {
+  left: 1rem;
+}
+
+.hero-carousel-arrow-right {
+  right: 1rem;
+}
+
+/* ─── Dots ─── */
+.hero-carousel-dots {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.hero-carousel-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero-carousel-dot-active {
+  background: #fff;
+  transform: scale(1.3);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 760px) {
+  .hero-carousel-arrow {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .hero-carousel-arrow-left {
+    left: 0.5rem;
+  }
+
+  .hero-carousel-arrow-right {
+    right: 0.5rem;
+  }
+
+  .hero-carousel-dots {
+    bottom: 0.75rem;
+  }
+
+  .hero-carousel-dot {
+    width: 0.4rem;
+    height: 0.4rem;
+  }
+}

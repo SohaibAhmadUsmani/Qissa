@@ -1,0 +1,222 @@
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 0.8s linear infinite;
+}
+
+/* ---- Page Shell ---- */
+
+.ps-page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  animation: fadeIn 0.35s ease;
+}
+
+/* ---- Card Base ---- */
+
+.ps-card {
+  width: min(480px, 100%);
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: 1.25rem;
+  box-shadow: 0 16px 48px rgba(19, 12, 8, 0.08);
+}
+
+/* ---- Loading ---- */
+
+.ps-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem 1rem;
+  color: var(--color-muted);
+}
+
+.ps-loading p {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+/* ---- Success Icon ---- */
+
+.ps-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.ps-icon-success {
+  background: #eaf7ed;
+  color: #2a7a3b;
+}
+
+.ps-icon-error {
+  background: #fef2f0;
+  color: #b33a2e;
+}
+
+/* ---- Typography ---- */
+
+.ps-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.ps-subtitle {
+  margin: 0.35rem 0 0;
+  font-size: 0.92rem;
+  color: var(--color-ink-soft);
+  font-weight: 500;
+}
+
+.ps-desc {
+  margin: 0.25rem 0 1.5rem;
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.ps-message {
+  margin: 0.5rem 0 1.5rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+/* ---- Details Card ---- */
+
+.ps-details-card {
+  text-align: left;
+  padding: 1.25rem 1.35rem;
+  margin-bottom: 1.5rem;
+  background: #faf8f5;
+  border: 1px solid var(--color-line);
+  border-radius: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.ps-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.84rem;
+}
+
+.ps-detail-label {
+  color: var(--color-muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.ps-detail-value {
+  color: var(--color-ink);
+  font-weight: 600;
+  text-align: right;
+  word-break: break-all;
+  max-width: 60%;
+}
+
+.ps-detail-id {
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.ps-detail-id .ps-detail-value {
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--color-muted);
+  font-family: monospace;
+}
+
+.ps-status-paid {
+  color: #2a7a3b;
+  font-weight: 700;
+}
+
+/* ---- Buttons ---- */
+
+.ps-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ps-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: 0.6rem;
+  font: inherit;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.ps-btn-primary {
+  background: var(--color-ink);
+  color: #fff;
+  border: 0;
+}
+
+.ps-btn-primary:hover {
+  background: #2f2620;
+}
+
+.ps-btn-outline {
+  background: transparent;
+  color: var(--color-ink);
+  border: 1.5px solid var(--color-line);
+}
+
+.ps-btn-outline:hover {
+  border-color: var(--color-ink);
+  background: #faf8f5;
+}
+
+/* ---- Error State ---- */
+
+.ps-error .ps-title {
+  font-size: 1.6rem;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 540px) {
+  .ps-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .ps-title {
+    font-size: 1.6rem;
+  }
+}

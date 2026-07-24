@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-bg: #f8f4f1;
+  --color-paper: #fffdfb;
+  --color-ink: #1f1712;
+  --color-ink-soft: #433831;
+  --color-muted: #7f736b;
+  --color-line: #e8ddd5;
+  --color-accent: #b2493c;
+  --color-gold: #c49a6c;
+  --color-gold-light: #e8d5c0;
+  --color-gold-soft: #f5ede4;
+
+  --font-body: 'Manrope', sans-serif;
+  --font-heading: 'Cormorant Garamond', serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background:
+    radial-gradient(1200px 440px at 94% -2%, rgba(189, 110, 78, 0.14), transparent 62%),
+    radial-gradient(800px 300px at -8% 22%, rgba(219, 191, 156, 0.2), transparent 58%),
+    var(--color-bg);
+}
+
+.container {
+  width: min(1180px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+a {
+  color: inherit;
+}
