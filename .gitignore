@@ -1,0 +1,30 @@
+# Sensitive files
+memory.md
+.env
+backend/.env
+frontend/.env
+
+# Dependencies
+node_modules/
+Qissa-clothing-store/node_modules/
+Qissa-clothing-store/frontend/node_modules/
+Qissa-clothing-store/backend/node_modules/
+
+# Build output
+dist/
+build/
+Qissa-clothing-store/dist/
+Qissa-clothing-store/frontend/dist/
+
+# Thumbnail cache
+Qissa-clothing-store/frontend/public/.thumbnails/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
