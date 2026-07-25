@@ -12,7 +12,10 @@ const envSchema = z.object({
   CLIENT_URL: z.string().url().default("http://localhost:5173"),
 });
 
-const parsed = envSchema.safeParse(process.env);
+const cleanEnv = Object.fromEntries(
+  Object.entries(process.env).filter(([, v]) => v !== "")
+);
+const parsed = envSchema.safeParse(cleanEnv);
 
 if (!parsed.success) {
   console.error("Invalid environment variables:");
