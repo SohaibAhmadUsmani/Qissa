@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
-  TrendingUp, ShoppingBag, Users, Package, IndianRupee,
+  TrendingUp, ShoppingBag, Users, Package,
   Loader, RefreshCw, AlertTriangle, Clock,
 } from 'lucide-react';
 import {
@@ -40,6 +40,8 @@ const STATUS_COLORS = {
   Delivered: '#1a7a3a',
   Cancelled: '#b33a2e',
 };
+
+const RsIcon = () => <span style={{ fontWeight: 700, fontSize: 16 }}>Rs.</span>;
 
 function InsightCard({ icon: Icon, label, value, color }) {
   return (
@@ -213,7 +215,7 @@ export default function AdminAnalytics() {
 
       {/* Quick Insights */}
       <div className="admin-stats-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))' }}>
-        <InsightCard icon={IndianRupee} label="Revenue" value={formatCurrency(stats.totalRevenue)} color="#1a7a3a" />
+        <InsightCard icon={RsIcon} label="Revenue" value={formatCurrency(stats.totalRevenue)} color="#1a7a3a" />
         <InsightCard icon={ShoppingBag} label="Total Orders" value={stats.totalOrders || 0} color="#b2493c" />
         <InsightCard icon={Users} label="Customers" value={stats.totalCustomers || 0} color="#c49a6c" />
         <InsightCard icon={Package} label="Products" value={stats.totalProducts || 0} color="#6b21a8" />

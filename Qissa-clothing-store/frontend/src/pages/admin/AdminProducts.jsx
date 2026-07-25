@@ -7,7 +7,6 @@ import {
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { adminService } from '../../services/adminService';
-import { API_BASE } from '../../config';
 import './admin.css';
 
 function formatCurrency(amount) {
@@ -303,7 +302,7 @@ export default function AdminProducts() {
                         </td>
                         <td>
                           {product.images?.[0]?.url ? (
-                            <img src={`${API_BASE}${product.images[0].url}?w=40`} alt="" className="admin-product-img" loading="lazy" />
+                            <img src={product.images[0].url} alt="" className="admin-product-img" loading="lazy" />
                           ) : (
                             <div className="admin-product-img-placeholder">
                               <ImageOff size={16} />

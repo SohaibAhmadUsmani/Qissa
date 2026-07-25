@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
   ShoppingBag,
-  IndianRupee,
   Package,
   Users,
   ShoppingCart,
@@ -18,7 +17,6 @@ import {
   PieChart,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { API_BASE } from '../../config';
 import api from '../../services/api';
 import OrderStatusBadge from '../../components/orders/OrderStatusBadge';
 import './admin.css';
@@ -34,6 +32,8 @@ function formatDate(dateStr) {
     day: 'numeric',
   });
 }
+
+const RsIcon = () => <span style={{ fontWeight: 700, fontSize: 18 }}>Rs.</span>;
 
 function StatCard({ icon: Icon, label, value, color, bg, onClick }) {
   return (
@@ -250,7 +250,7 @@ export default function AdminDashboard() {
           onClick={() => navigate('/admin/orders')}
         />
         <StatCard
-          icon={IndianRupee}
+          icon={RsIcon}
           label="Revenue"
           value={formatCurrency(totalRevenue)}
           color="#1a7a3a"
@@ -465,7 +465,7 @@ export default function AdminDashboard() {
                       onClick={() => navigate('/admin/products')}
                     >
                       {product.images?.[0]?.url ? (
-                        <img src={`${API_BASE}${product.images[0].url}?w=40`} alt="" className="admin-product-img" loading="lazy" />
+                        <img src={product.images[0].url} alt="" className="admin-product-img" loading="lazy" />
                       ) : (
                         <div className="admin-product-img-placeholder">
                           <Package size={16} />

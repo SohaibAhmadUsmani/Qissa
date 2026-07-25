@@ -18,7 +18,6 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
 import blogRoutes from "./routes/blog.routes.js";
 import aiRoutes from "./routes/ai.routes.js";
-import imageRoutes from "./routes/imageRoutes.js";
 import {
   errorHandler,
   notFoundHandler,
@@ -105,9 +104,6 @@ app.use("/api/blogs", blogRoutes);
 
 // AI Routes
 app.use("/api/ai", aiRoutes);
-
-// Image Routes (serves & resizes images from frontend/public/assets)
-app.use("/assets", imageRoutes);
 
 // Existing API Routes
 app.use("/api/v1", apiRouter);
