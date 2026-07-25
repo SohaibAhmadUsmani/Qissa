@@ -29,9 +29,17 @@ const app = express();
 app.use(
   cors({
     origin: (origin, cb) => {
+      const allowedOrigins = [
+        /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/,
+      ];
+      if (env.CLIENT_URL) {
+        try {
+          allowedOrigins.push(new URL(env.CLIENT_URL).origin);
+        } catch {}
+      }
       if (
         !origin ||
-        /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)
+        allowedOrigins.some((p) => (typeof p === "string" ? p === origin : p.test(origin)))
       ) {
         return cb(null, true);
       }
