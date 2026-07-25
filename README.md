@@ -158,15 +158,6 @@ npm run dev
 | `GROQ_API_KEY` | Groq AI API key |
 | `CLIENT_URL` | Frontend URL (default: `http://localhost:5174`) |
 
-## Roadmap
-
-- [ ] AI Teaching Assistant
-- [ ] Personalized Recommendations
-- [ ] Mobile App
-- [ ] Multi-vendor Support
-- [ ] Advanced Analytics Dashboard
-- [ ] Live Chat Support
-
 ## Author
 
 **Sohaib Usmani**
